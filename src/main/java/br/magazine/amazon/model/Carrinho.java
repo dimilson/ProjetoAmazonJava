@@ -23,6 +23,11 @@ public class Carrinho {
 	@OneToMany
 	@JoinColumn(name = "codigo")
 	private List<Produto> produto = new ArrayList<>();
+
+	public Carrinho() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	
