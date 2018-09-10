@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="tabelaCliente")
+
 public class Cliente {
 
 	@Id
@@ -19,7 +19,7 @@ public class Cliente {
 	@Column
 	private String nome;
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "ide")
+	@JoinColumn(name = "Id_endereco")
 	private Endereco endereco;
 	
 	@Column
