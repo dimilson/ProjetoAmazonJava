@@ -21,10 +21,13 @@ public class Cliente {
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "ide")
 	private Endereco endereco;
+	
 	@Column
 	private String email;
+	
 	@Column
 	private String senha;
+	
 	@Column
 	private String telefone;
 	

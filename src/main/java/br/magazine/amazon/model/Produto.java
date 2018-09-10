@@ -30,7 +30,7 @@ public class Produto {
 	private String marca;
 	@Column
 	private Double preco;
-	@OneToMany(cascade =CascadeType.ALL , mappedBy = "carrinho"  )
+	@ManyToOne
 	private Carrinho carrinho;
 	
 	
