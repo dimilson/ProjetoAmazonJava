@@ -62,19 +62,10 @@ public class CadastroDeCliente {
 		tx.begin();
 		
 		
-		Cliente pessoa = new Cliente(); 
-		Endereco endereco = new Endereco();
-		
-		endereco.setRua(rua);
-		endereco.setBairro(bairro);
-		endereco.setCidade(cidade);
-		endereco.setEstado(estado);
-		endereco.setCep(cep);
-		
-		
+		Cliente pessoa = new Cliente(); 	
 		pessoa.setNome(nome);
 		pessoa.setEmail(email);
-		pessoa.getEnderecos().add(endereco);
+		pessoa.getEnderecos().add(new Endereco(estado,cidade,bairro,cep,rua));
 		pessoa.setTelefone(telefone);
 		pessoa.setSenha(senha);
 		
