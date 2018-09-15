@@ -1,16 +1,12 @@
 package br.magazine.amazon.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
-import org.hibernate.annotations.Cascade;
 
 
 @Entity
@@ -18,13 +14,13 @@ public class Produto {
 	
 	@Id
 	@GeneratedValue
-	private String codigo;
+	private Integer codigo;
 	@Column
 	private String nome;
 	@Column
 	private String descricao;
 	@ManyToOne
-	@JoinColumn(name = "idc")
+	@JoinColumn(name = "id_categoria")
 	private Categoria categoria;
 	@Column
 	private String marca;
@@ -34,15 +30,8 @@ public class Produto {
 	private Carrinho carrinho;
 	
 	
-	public Produto(String nome, String codigo, String descricao, Categoria categoria, String marca, Double preco) {
-		//super();
+	public Produto() {
 		
-		this.nome = nome;
-		this.codigo = codigo;
-		this.descricao = descricao;
-		this.categoria = categoria;
-		this.marca = marca;
-		this.preco = preco;
 	}
 
 	public String getNome() {
@@ -53,12 +42,12 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public String getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public Carrinho getCarrinho() {
+		return carrinho;
 	}
 
 	public String getDescricao() {
