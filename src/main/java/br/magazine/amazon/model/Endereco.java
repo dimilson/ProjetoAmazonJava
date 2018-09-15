@@ -11,7 +11,7 @@ public class Endereco {
 
 	@Id
 	@GeneratedValue
-	private Integer ide;
+	private Integer id;
 	@Column
 	private String estado;
 	@Column
@@ -28,29 +28,10 @@ public class Endereco {
 		
 	}
 	
-	public Endereco(String estado, String cidade, String bairro, String cep,String rua) {
-		//super();
-		
-		this.estado = estado;
-		this.cidade = cidade;
-		this.bairro = bairro;
-		this.cep = cep;
-		this.rua = rua;
+
+	public Integer getId() {
+		return id;
 	}
-	
-	
-
-	public Integer getIde() {
-		return ide;
-	}
-
-
-
-	public void setIde(Integer ide) {
-		this.ide = ide;
-	}
-
-
 
 	public String getEstado() {
 		return estado;
@@ -84,20 +65,13 @@ public class Endereco {
 		this.cep = cep;
 	}
 
-
-
 	public String getRua() {
 		return rua;
 	}
-
-
 
 	public void setRua(String rua) {
 		this.rua = rua;
 	}
 	
-	
-	
-	
-	
+		
 }
