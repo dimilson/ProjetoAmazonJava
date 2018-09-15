@@ -15,7 +15,7 @@ public class Cliente {
 
 	@Id
 	@GeneratedValue
-	private int id;
+	private Integer id;
 	@Column
 	private String nome;
 	@OneToMany
