@@ -42,11 +42,13 @@ public class TelaCadastroProduto {
 				System.out.println("Digite o tipo da categoria: ");
 				tipoCategoria = ler.nextLine();
 				
+				System.out.println("Digite a marca do produto: ");
+				marca = ler.nextLine();
+				
 				System.out.println("Digite o preço do produto: ");
 				preco = lerN.nextDouble();
 				
-				System.out.println("Digite a marca do produto: ");
-				marca = ler.nextLine();
+				
 				
 				
 				EntityManager manager = JPAUtil.getEntityManager();
@@ -60,6 +62,9 @@ public class TelaCadastroProduto {
 			
 				c.setNome(nomeCategoria);
 				c.setTipo(tipoCategoria);
+				c.getProdutos().add(null);
+				
+				manager.persist(c);
 				
 				p.setNome(nome);
 				p.setDescricao(descricao);
@@ -67,7 +72,6 @@ public class TelaCadastroProduto {
 				p.setMarca(marca);
 				p.setCategoria(c);
 			
-				manager.persist(c);
 				
 				manager.persist(p);
 				
