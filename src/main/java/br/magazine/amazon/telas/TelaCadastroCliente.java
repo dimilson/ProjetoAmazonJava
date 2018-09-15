@@ -9,7 +9,7 @@ import br.magazine.amazon.JPAUtil;
 import br.magazine.amazon.model.Cliente;
 
 
-public class CadastroDeCliente {
+public class TelaCadastroCliente {
 	
 	public void cadastrarCliente() {
 		
