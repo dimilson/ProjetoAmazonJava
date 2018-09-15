@@ -1,13 +1,13 @@
 package br.magazine.amazon.model;
 
-import javax.persistence.CascadeType;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
 
 @Entity
 
@@ -18,9 +18,9 @@ public class Cliente {
 	private int id;
 	@Column
 	private String nome;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@OneToMany
 	@JoinColumn(name = "Id_endereco")
-	private Endereco endereco;
+	private List<Endereco> enderecos;
 	
 	@Column
 	private String email;
@@ -37,16 +37,6 @@ public class Cliente {
 		
 	}
 	
-	public Cliente(String nome, Endereco endereco, String email, String senha, String telefone) {
-		//super();
-		
-		this.nome = nome;
-		this.endereco = endereco;
-		this.email = email;
-		this.senha = senha;
-		this.telefone = telefone;
-	
-	}
 
 	public String getNome() {
 		return nome;
@@ -56,13 +46,17 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
+	
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
 	}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
+
 
 	public String getEmail() {
 		return email;
