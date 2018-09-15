@@ -12,7 +12,7 @@ import br.magazine.amazon.model.Endereco;
 
 public class CadastroDeCliente {
 	
-	public  static void cadastrarCliente() {
+	public void cadastrarCliente() {
 		
 		Scanner ler = new Scanner(System.in);
 		
@@ -63,14 +63,7 @@ public class CadastroDeCliente {
 		
 		
 		Cliente pessoa = new Cliente(); 
-		Endereco endereco = new Endereco();
-		
-		endereco.setRua(rua);
-		endereco.setBairro(bairro);
-		endereco.setCidade(cidade);
-		endereco.setEstado(estado);
-		endereco.setCep(cep);
-		
+		Endereco endereco = new Endereco(estado, cidade, bairro, cep, rua);
 		
 		manager.persist(endereco);
 		
