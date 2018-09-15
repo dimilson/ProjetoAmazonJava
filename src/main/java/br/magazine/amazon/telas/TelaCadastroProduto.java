@@ -65,11 +65,10 @@ public class TelaCadastroProduto {
 				p.setDescricao(descricao);
 				p.setPreco(preco);
 				p.setMarca(marca);
-				
-				c.getProdutos().add(p);
+				p.setCategoria(c);
+			
 				manager.persist(c);
 				
-				p.setCategoria(c);
 				manager.persist(p);
 				
 				
