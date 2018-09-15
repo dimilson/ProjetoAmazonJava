@@ -6,7 +6,9 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		
-		CadastroDeCliente.cadastrarCliente();
+		CadastroDeCliente cadastro = new CadastroDeCliente(); 
+		
+		cadastro.cadastrarCliente();
 		
 	}
 
