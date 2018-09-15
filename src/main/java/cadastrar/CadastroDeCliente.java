@@ -16,15 +16,15 @@ public class CadastroDeCliente {
 		
 		Scanner ler = new Scanner(System.in);
 		
-		String nome = "Edmilson";
-		String estado = "Alagoas";
-		String cidade="Rio Largo";
-		String cep="67100000";
-		String rua = "Quadra R";
-		String bairro="Cruzeiro do Sul";
-		String email = "edmilsonjunior@gmail.com";
-		String senha = "12345";
-		String telefone = "98876-9123";
+		String nome ;
+		String estado ;
+		String cidade;
+		String cep;
+		String rua ;
+		String bairro;
+		String email ;
+		String senha;
+		String telefone;
 		
 		
 		
