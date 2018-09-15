@@ -1,6 +1,6 @@
 package br.magazine.amazon;
 
-import cadastrar.CadastroDeCliente;
+import br.magazine.amazon.telas.CadastroDeCliente;
 
 public class Principal {
 	
