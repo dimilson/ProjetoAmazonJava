@@ -1,9 +1,13 @@
 package br.magazine.amazon.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -12,31 +16,22 @@ public class Categoria {
 
 	@Id
 	@GeneratedValue
-	private Integer idc;
-	
+	private Integer id;
 	@Column
 	private String nome;
 	@Column
 	private String tipo;
+	@OneToMany
+	@JoinColumn(name = "produtos")
+	private List<Produto> produtos;
 	
-	public Categoria(String nome, String tipo) {
-		
-		//super();
-		
-		this.nome = nome;
-		this.tipo = tipo;
+	public Categoria() {
 	}
 	
-
-	public Integer getIdc() {
-		return idc;
+	
+	public Integer getId() {
+		return id;
 	}
-
-
-	public void setIdc(Integer idc) {
-		this.idc = idc;
-	}
-
 
 	public String getNome() {
 		return nome;
@@ -53,6 +48,18 @@ public class Categoria {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
+
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
+	
+	
 	
 	
 
