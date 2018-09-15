@@ -18,16 +18,25 @@ public class Carrinho {
 	
 	@Id
 	@GeneratedValue
-	private Long id ;
+	private Integer id ;
 	
 	@OneToMany
 	@JoinColumn(name = "codigo")
 	private List<Produto> produto = new ArrayList<>();
 
 	public Carrinho() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
+
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
+	
+	
 	
 	
 	
