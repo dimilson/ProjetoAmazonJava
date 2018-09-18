@@ -1,7 +1,9 @@
 package br.magazine.amazon.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,11 +18,13 @@ public class Cliente {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
 	@Column
 	private String nome;
-	@OneToMany
+	
+	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name = "Id_endereco")
-	private List<Endereco> enderecos;
+	private List<Endereco> enderecos = new ArrayList<Endereco>();
 	
 	@Column
 	private String email;
@@ -53,8 +57,8 @@ public class Cliente {
 	}
 
 
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
+	public void setEnderecos(List<Endereco>endereco) {
+		this.enderecos = endereco;
 	}
 
 
