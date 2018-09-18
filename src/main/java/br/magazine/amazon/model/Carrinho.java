@@ -1,14 +1,16 @@
 package br.magazine.amazon.model;
 
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+
 
 @Entity
 public class Carrinho {
@@ -17,9 +19,9 @@ public class Carrinho {
 	@GeneratedValue
 	private Integer id ;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name = "codigo")
-	private List<Produto> produto = new ArrayList<>();
+	private List<Produto> produto = new ArrayList<Produto>();
 
 	public Carrinho() {
 		
