@@ -15,17 +15,23 @@ public class Produto {
 	@Id
 	@GeneratedValue
 	private Integer codigo;
+	
 	@Column
 	private String nome;
+	
 	@Column
 	private String descricao;
+	
 	@ManyToOne
 	@JoinColumn(name = "id_categoria")
 	private Categoria categoria;
+	
 	@Column
 	private String marca;
+	
 	@Column
 	private Double preco;
+	
 	@ManyToOne
 	private Carrinho carrinho;
 	
