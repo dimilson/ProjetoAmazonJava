@@ -2,13 +2,13 @@ package br.magazine.amazon.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 
 @Entity
@@ -17,11 +17,14 @@ public class Categoria {
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
 	@Column
 	private String nome;
+	
 	@Column
 	private String tipo;
-	@OneToMany
+	
+	@OneToMany(cascade= CascadeType.ALL)
 	@JoinColumn(name = "produtos")
 	private List<Produto> produtos;
 	
